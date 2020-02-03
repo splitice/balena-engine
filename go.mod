@@ -89,3 +89,42 @@ replace (
 	github.com/ishidawataru/sctp => github.com/ishidawataru/sctp v0.0.0-20180918013207-6e2cb1366111
 	github.com/moby/buildkit => github.com/moby/buildkit v0.0.0-20190819135608-588c73e1e4f0
 )
+
+// DO NOT EDIT BELOW THIS LINE -------- reserved for downstream projects --------
+
+// additional dependencies as a result of our single-binary approach
+require (
+	github.com/urfave/cli                               cfb38830724cc34fedffe9a2a29fb54fa9169cd1 // v1.20.0
+	github.com/mrunalp/fileutils                        7d4729fb36185a7c1719923406c9d40e54fb93c7
+	github.com/checkpoint-restore/go-criu               17b0214f6c48980c45dc47ecb0cfd6d9e02df723 // v3.11
+	github.com/cyphar/filepath-securejoin               a261ee33d7a517f054effbf451841abaafe3e0fd // v0.2.2
+	github.com/containerd/aufs                          f894a800659b6e11c1a13084abd1712f346e349c
+	github.com/docker/docker-credential-helpers         54f0238b6bf101fc3ad3b34114cb5520beb562f5 // v0.6.3
+	github.com/agl/ed25519                              5312a61534124124185d41f09206b9fef1d88403
+	github.com/xeipuuv/gojsonpointer                    4e3ac2762d5f479393488629ee9370b50873b3a6
+	github.com/xeipuuv/gojsonreference                  bd5ef7bd5415a7ac448318e64f11a24cd21e594b
+	github.com/xeipuuv/gojsonschema                     93e72a773fade158921402d6a24c819b48aba29d
+	github.com/mitchellh/mapstructure                   f15292f7a699fcc1a38a80977f80a046874ba8ac
+	github.com/theupdateframework/notary                d6e1431feb32348e0650bf7551ac5cffd01d857b // v0.6.1
+	github.com/hashicorp/go-version                     23480c0665776210b5fbbac6eaaee40e3e6a96b7
+	github.com/jaguilar/vt100                           ad4c4a5743050fb7f88ce968dca9422f72a0e3f2 https://github.com/tonistiigi/vt100
+	github.com/tonistiigi/units                         6950e57a87eaf136bbe44ef2ec8e75b9e3569de2
+	gopkg.in/yaml.v2                                    bb4e33bf68bf89cad44d386192cbed201f35b241 // v2.2.3
+	vbom.ml/util                                        256737ac55c46798123f754ab7d2c784e2c71783
+	github.com/docker/go                                d30aec9fd63c35133f8f79c3412ad91a3b08be06 // Contains a customized version of canonical/json and is used by Notary. The package is periodically rebased on current Go versions.
+)
+replace (
+	github.com/jaguilar/vt100 => github.com/tonistiigi/vt100 ad4c4a5743050fb7f88ce968dca9422f72a0e3f2
+)
+
+// balena-engine dependencies
+require (
+	github.com/balena-os/librsync-go 7457649327d3c2d2e7b7880ea239a03b1b28f7b4
+	github.com/balena-os/circbuf     56e73111d0b216a0157b0122dbba22a6bcaba395
+)
+replace (
+	github.com/containerd/containerd => github.com/balena-os/balena-containerd 41397e3f34baa02b43ff4777adb6ea1fcab1ea07
+	github.com/opencontainers/runc   => github.com/balena-os/balena-runc a1c6a79d410585c0a0cf68e711352015c1b92f4d
+	github.com/docker/libnetwork     => github.com/balena-os/balena-libnetwork 21ccc1c706422e973c42f876f7ed377d993387a1
+	github.com/docker/cli            => github.com/balena-os/balena-engine-cli 81f0b4cfcc32ab316fb2a5dc8130f3e45d89658e
+)
